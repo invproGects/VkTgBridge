@@ -15,7 +15,7 @@ Env Variables:
 - TG_CHAT      - Telegram Chat ID
 
 How to get VK Token:
-1. go to (VkHost)[https://vkhost.github.io]
+1. go to [VkHost](https://vkhost.github.io)
 2. Select VK Admin tool
 3. Copy token from address bar
 
