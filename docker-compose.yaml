@@ -1,0 +1,8 @@
+services:
+  vk2tg:
+    build: .
+    command: python vk2tg.py
+
+  tg2vk:
+    build: .
+    command: python tg2vk.py
