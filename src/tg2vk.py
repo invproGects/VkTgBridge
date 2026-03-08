@@ -8,8 +8,14 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 
 from config import settings
 
-import logging
 from io import BytesIO
+
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(message)s"
+)
 
 
 bot = Bot(token=settings.TG_BOT_TOKEN,)

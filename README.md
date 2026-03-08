@@ -13,9 +13,10 @@ Env Variables:
 - `VK_CHAT_ID`   - VK Chat ID
 - `TG_BOT_TOKEN` - Telegram bot Token
 - `TG_CHAT`      - Telegram Chat ID
+- `DEBUG`        - Debug Flag
 
 How to get VK Token:
-1. go to [VkHost](https://vkhost.github.io)
+1. Go to [VkHost](https://vkhost.github.io)
 2. Select VK Admin tool
 3. Copy token from address bar
 
