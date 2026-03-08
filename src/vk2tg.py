@@ -31,8 +31,8 @@ async def poll_loop():
     logging.info("VK Long Poll started...")
 
     for event in longpoll.listen():
-        if event.peer_id != settings.VK_CHAT_ID or event.from_me:
-            continue
+        # if event.peer_id != settings.VK_CHAT_ID or event.from_me:
+        #     continue
         
         logging.debug(f"New Message: {vars(event)}")
 
