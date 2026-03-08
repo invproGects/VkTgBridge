@@ -1,5 +1,5 @@
 import asyncio
-import json
+
 import aiohttp
 
 from aiogram import Bot
@@ -26,20 +26,15 @@ def prep_md(username: str, text: str) -> str:
 
     return ret
 
-def log_message_rel(tg_msg, event):
-    with open("message_ids.json") as f:
-        data = json.loads(f.read())
-
-    
-
 
 async def poll_loop():
     logging.info("VK Long Poll started...")
 
     for event in longpoll.listen():
-        # if event.peer_id != settings.VK_CHAT_ID or event.from_me:
-        #     continue
-
+        if event.peer_id != settings.VK_CHAT_ID or event.from_me:
+            continue
+        
+        logging.debug(f"New Message: {vars(event)}")
 
         try:
             if event.type in [VkEventType.MESSAGE_NEW, VkEventType.MESSAGE_EDIT]:
@@ -76,6 +71,8 @@ async def poll_loop():
                             tg_msg = await bot.send_document(settings.TG_CHAT,file,caption=md_text,parse_mode="MarkdownV2")
 
         except Exception as e:
-            logging.error(e)
+            logging.exception("VK to TG error")
 
-asyncio.run(poll_loop())
+
+if __name__ == "__main__":
+    asyncio.run(poll_loop())
