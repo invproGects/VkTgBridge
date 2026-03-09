@@ -2,7 +2,14 @@ services:
   vk2tg:
     build: .
     command: python vk2tg.py
+    env_file:
+      - .env
+    restart: unless-stopped
 
   tg2vk:
+    image: vk2tg
     build: .
     command: python tg2vk.py
+    env_file:
+      - .env
+    restart: unless-stopped
