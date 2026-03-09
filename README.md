@@ -25,7 +25,7 @@ How to use:
 docker compose up
 ```
 
-It supports:
+Supports:
 - From VK to Telegram
     - Text messages
     - Images 

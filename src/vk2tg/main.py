@@ -54,6 +54,7 @@ async def poll_loop():
 
         except Exception as e:
             logging.exception("VK to TG error")
+            await bot.send_message(settings.TG_CHAT, str(e))
 
 
 if __name__ == "__main__":
