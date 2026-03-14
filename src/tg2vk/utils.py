@@ -48,7 +48,7 @@ async def send_document(message: Message, upload: VkUpload, vk: VkApiMethod):
     doc_vk = upload.document_message(doc_file, doc.file_name, settings.VK_CHAT_ID)
     attachment = f"doc{doc_vk['doc']['owner_id']}_{doc_vk['doc']['id']}"
 
-    vk.messages.send(
+    vk.messages.send(                # Any file sends as .JPG, idk why
         peer_id=settings.VK_CHAT_ID,
         attachment=attachment,
         message=message.caption,

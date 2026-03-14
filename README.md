@@ -22,7 +22,9 @@ How to get VK Token:
 
 How to use:
 ```sh
-docker compose up
+git clone --depth=1 https://github.com/invproGects/VkTgBridge.git
+cd VkTgBridge
+docker compose up -d
 ```
 
 Supports:
